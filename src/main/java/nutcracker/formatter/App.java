@@ -17,9 +17,10 @@ public class App {
 
 		FileContentReader fileContentReader = new FileContentReader();
 		FileContentWriter fileContentWriter = new FileContentWriter();
+		Formatter formatter = new DefaultFormatter();
 
 		List<String> content = fileContentReader.readContent(System.in);
-		fileContentWriter.writeContent(content, System.out);
+		fileContentWriter.writeContent(formatter.format(content), System.out);
 
 		LOGGER.info("Application finished");
 	}
