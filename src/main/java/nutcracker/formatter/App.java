@@ -17,8 +17,9 @@ public class App {
 
 		FileContentReader fileContentReader = new FileContentReader();
 		FileContentWriter fileContentWriter = new FileContentWriter();
-		Formatter formatter = new DefaultFormatter();
-
+//		Formatter formatter = new DefaultFormatter();
+		Formatter formatter = new ReverseFormatter();
+		
 		List<String> content = fileContentReader.readContent(System.in);
 		fileContentWriter.writeContent(formatter.format(content), System.out);
 
