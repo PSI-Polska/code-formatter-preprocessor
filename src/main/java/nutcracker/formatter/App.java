@@ -9,9 +9,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Formatter {
+public class App {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(Formatter.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
 	public static void main(String[] args) {
 		LOGGER.info("Application started with args: ");
