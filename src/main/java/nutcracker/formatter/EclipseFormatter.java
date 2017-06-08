@@ -38,6 +38,10 @@ public class EclipseFormatter implements Formatter {
 				getDefaultConfigurationSource());
 	}
 
+	public EclipseFormatter(String formatterAbsolutePath) {
+		javaFormatter = new JavaFormatter(getFormattingOptions(formatterAbsolutePath), getDefaultConfigurationSource());
+	}
+
 	@Override
 	public List<String> format(List<String> content) {
 		String formatted = format0(content);
