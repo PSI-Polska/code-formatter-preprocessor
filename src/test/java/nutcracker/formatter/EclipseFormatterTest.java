@@ -3,9 +3,6 @@ package nutcracker.formatter;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 import com.marvinformatics.formatter.support.io.Resource;
@@ -22,14 +19,9 @@ public class EclipseFormatterTest {
 	public void testDefaultDoFormat() {
 		EclipseFormatter formatter = new EclipseFormatter();
 
-		List<String> code = new ArrayList<String>();
-		code.add("public class ");
-		code.add("Test{}");
+		String formattedCode = formatter.format("public class \n Test{\n}");
 
-		List<String> formattedCode = formatter.format(code);
-
-		assertEquals("public class Test {", formattedCode.get(0));
-		assertEquals("}", formattedCode.get(1));
+		assertEquals("public class Test {\n}", formattedCode);
 	}
 
 	@Test

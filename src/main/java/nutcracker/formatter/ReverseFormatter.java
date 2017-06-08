@@ -1,17 +1,22 @@
 package nutcracker.formatter;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class ReverseFormatter implements Formatter {
 
 	@Override
-	public List<String> format(List<String> content) {
-		List<String> result = new ArrayList<String>(content);
+	public String format(String content) {
+		List<String> result = Arrays.asList(content.split("\\r?\\n"));
 
 		Collections.reverse(result);
 
-		return result;
+		StringBuilder sb = new StringBuilder();
+		for (String line : result) {
+			sb.append(line);
+		}
+
+		return sb.toString();
 	}
 }

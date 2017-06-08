@@ -1,7 +1,5 @@
 package nutcracker.formatter;
 
-import java.util.List;
-
 public interface Formatter {
-	public List<String> format(List<String> content);
+	public String format(String content);
 }

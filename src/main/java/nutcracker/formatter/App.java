@@ -31,7 +31,7 @@ public class App {
 		// Formatter formatter = new EclipseFormatter();
 		Formatter formatter = new EclipseFormatter(PSI_FORMATTER_PATH);
 
-		List<String> content = fileContentReader.readContent(System.in);
+		String content = fileContentReader.readContent(System.in);
 		fileContentWriter.writeContent(formatter.format(content), System.out);
 
 		LOGGER.info("Application finished");
