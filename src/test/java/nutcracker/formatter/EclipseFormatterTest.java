@@ -1,11 +1,15 @@
 package nutcracker.formatter;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.marvinformatics.formatter.support.io.Resource;
+import com.marvinformatics.formatter.support.io.Resource.UnknownResourceException;
 
 public class EclipseFormatterTest {
 
@@ -25,5 +29,12 @@ public class EclipseFormatterTest {
 		String formattedCode = formatter.format2(code);
 
 		assertEquals("public class Test {\n}\n", formattedCode);
+	}
+
+	@Test
+	public void testDefaultFormatterResource() throws UnknownResourceException {
+		Resource resource = Resource.forPath(EclipseFormatter.DEFAULT_FORMATTER_FILE);
+
+		assertNotNull(resource.asInputStream());
 	}
 }

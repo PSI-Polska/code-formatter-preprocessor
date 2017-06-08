@@ -28,12 +28,12 @@ import com.marvinformatics.formatter.support.io.Resource.UnknownResourceExceptio
 public class EclipseFormatter implements Formatter {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EclipseFormatter.class);
 
-	private String configFile = "src/main/resources/java.xml";
+	public final static String DEFAULT_FORMATTER_FILE = "classpath:/java.xml";
 
 	private JavaFormatter javaFormatter;
 
 	public EclipseFormatter() {
-		javaFormatter = new JavaFormatter(getFormattingOptions(configFile), getDefaultConfigurationSource());
+		javaFormatter = new JavaFormatter(getFormattingOptions(DEFAULT_FORMATTER_FILE), getDefaultConfigurationSource());
 	}
 
 	@Override
