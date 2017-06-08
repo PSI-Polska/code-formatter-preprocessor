@@ -15,6 +15,7 @@ public class ReverseFormatter implements Formatter {
 		StringBuilder sb = new StringBuilder();
 		for (String line : result) {
 			sb.append(line);
+			sb.append("\n");
 		}
 
 		return sb.toString();
