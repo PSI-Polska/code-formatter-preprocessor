@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,15 +34,20 @@ public class EclipseFormatter implements Formatter {
 	private JavaFormatter javaFormatter;
 
 	public EclipseFormatter() {
-		javaFormatter = new JavaFormatter(getFormattingOptions(DEFAULT_FORMATTER_FILE), getDefaultConfigurationSource());
+		javaFormatter = new JavaFormatter(getFormattingOptions(DEFAULT_FORMATTER_FILE),
+				getDefaultConfigurationSource());
 	}
 
 	@Override
 	public List<String> format(List<String> content) {
-		return content;
+		String formatted = format0(content);
+
+		String[] formattedasLines = formatted.split("\\r?\\n");
+
+		return Arrays.asList(formattedasLines);
 	}
 
-	public String format2(List<String> content) {
+	private String format0(List<String> content) {
 		StringBuilder sb = new StringBuilder();
 
 		for (String line : content) {

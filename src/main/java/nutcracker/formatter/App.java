@@ -23,10 +23,10 @@ public class App {
 
 		FileContentReader fileContentReader = new FileContentReader();
 		FileContentWriter fileContentWriter = new FileContentWriter();
-		Formatter formatter = new DefaultFormatter();
+		// Formatter formatter = new DefaultFormatter();
 		// Formatter formatter = new ReverseFormatter();
 
-		Formatter formatter2 = new EclipseFormatter();
+		Formatter formatter = new EclipseFormatter();
 
 		List<String> content = fileContentReader.readContent(System.in);
 		fileContentWriter.writeContent(formatter.format(content), System.out);

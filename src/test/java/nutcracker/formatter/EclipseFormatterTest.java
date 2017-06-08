@@ -26,9 +26,10 @@ public class EclipseFormatterTest {
 		code.add("public class ");
 		code.add("Test{}");
 
-		String formattedCode = formatter.format2(code);
+		List<String> formattedCode = formatter.format(code);
 
-		assertEquals("public class Test {\n}\n", formattedCode);
+		assertEquals("public class Test {", formattedCode.get(0));
+		assertEquals("}", formattedCode.get(1));
 	}
 
 	@Test
