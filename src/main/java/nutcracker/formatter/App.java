@@ -1,14 +1,10 @@
 package nutcracker.formatter;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class App {
 	private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
-
-	private final static String PSI_FORMATTER_PATH = "classpath:/PSI-formatter.xml";
 
 	public static void main(String[] args) {
 		Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
@@ -29,7 +25,7 @@ public class App {
 		// Formatter formatter = new ReverseFormatter();
 
 		// Formatter formatter = new EclipseFormatter();
-		Formatter formatter = new EclipseFormatter(PSI_FORMATTER_PATH);
+		Formatter formatter = new EclipseFormatter();
 
 		String content = fileContentReader.readContent(System.in);
 		fileContentWriter.writeContent(formatter.format(content), System.out);
