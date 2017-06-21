@@ -36,8 +36,8 @@ public class EclipseFormatter implements Formatter {
 				getDefaultConfigurationSource());
 	}
 
-	public EclipseFormatter(String formatterAbsolutePath) {
-		javaFormatter = new JavaFormatter(getFormattingOptions(formatterAbsolutePath), getDefaultConfigurationSource());
+	public EclipseFormatter(String formatterPath) {
+		javaFormatter = new JavaFormatter(getFormattingOptions(formatterPath), getDefaultConfigurationSource());
 	}
 
 	@Override
