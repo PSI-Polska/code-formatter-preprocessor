@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "nutcracker.formatter.App"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'nutcracker-formatter'
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+  mavenLocal()
+}
+
+eclipse {
+  classpath {
+    downloadSources = true
+  }
+}
+
+dependencies {
+  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+  compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+  compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+  
+  compile group: 'com.marvinformatics.formatter', name: 'formatter-maven-plugin', version: '1.9.1.RC2'
+  compile group: 'org.apache.maven', name: 'maven-plugin-api', version: '[3.0,)'
+  
+  testCompile 'junit:junit:4.10'
+}
