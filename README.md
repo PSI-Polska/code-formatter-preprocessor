@@ -1,12 +1,7 @@
 # code-formatter
 This project will try to eliminate changes caused by a different code formatting when comparing two files using [KDiff3](http://kdiff3.sourceforge.net/).
 
-Do you compare sometimes the same source file across different branches to spot that little small difference? That little small difference, which may be a root cause of the bug? That little small difference, which may actually a bugfix that has been integrated only on one branch and somebody forgot to merge it into another branch?
-
-You are looking for that specific change but your diff-application shows a o lot of nasty-looking changes? You may enable **ignore whitespaces** in your diff-application but this in more cases is not enough. After some moments you notice that many of those nasty-looking changes are a result of a... different source code formatting!
-
-
-As said before, this project will try to eliminate code formatting when comparing two files.
+When comparing two files, mostly the diff-application shows a o lot of nasty-looking changes. You may enable **ignore whitespaces** in your diff-application but this may be not enough in more cases. After some moments you notice that many of those nasty-looking changes are a result of a different source code formatting.
 
 How it works? More of the diff applications have some additional options to controll the diff process. The most common option is to ignore whitespace characters while comparing files but this will not help if the files were formatted with different code formatters. [Kdiff3 differ](http://kdiff3.sourceforge.net/) introduces a feature that is called a [preprocessor command](http://kdiff3.sourceforge.net/doc/preprocessors.html):
 >When any file is read, it will be piped through this external command. The output of this command will be visible instead of the original file. You can write your own preprocessor that fulfills your specific needs. Use this to cut away disturbing parts of the file, or to automatically correct the indentation etc.
